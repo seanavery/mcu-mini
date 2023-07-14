@@ -1,0 +1,14 @@
+device: "cu.usbserial-11310"
+gamepad:
+  name: "PS4 Controller"
+  guid: "030000004c050000cc09000000016800"
+throttle:
+  prefix: 't'
+  neutral: 90
+  forward: 120
+  reverse: 60
+steering:
+  prefix: 's'
+  center: 90
+  left: 60
+  right: 120
