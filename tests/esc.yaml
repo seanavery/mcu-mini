@@ -12,3 +12,5 @@ steering:
   center: 90
   left: 60
   right: 120
+escape: '#'
+baudrate: 115200

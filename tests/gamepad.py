@@ -49,7 +49,7 @@ if __name__ == "__main__":
   gp = find_gamepad(gamepad_name, gamepad_guid)
 
   # connect to serial port
-  ser = serial.Serial("/dev/{}".format(device), 115200);
+  ser = serial.Serial("/dev/{}".format(device), baudrate)
 
   # controller state poll
   payload = None
@@ -68,4 +68,3 @@ if __name__ == "__main__":
             payload = msg.format_msg(throttle_index, msg.normalize_throttle(e.value * -1))
           if payload:
             ser.write(payload)
-
