@@ -7,19 +7,19 @@ import time
 from message import Message
 from util import fetch_config
 
-# throttle
-throttle_index = "t";
-steering_index = "s";
-escape_char = "#";
-
-# # throttle
-throttle = 90;
-# steering
-steering = 90;
-
 if __name__ == "__main__":
+  # globals
+  throttle = 90;
+  steering = 90;
+
   # fetch config
   conf = fetch_config()
+
+  # prefix
+  throttle_index = conf['throttle']['prefix']
+  steering_index = conf['steering']['prefix']
+  escape_char = conf['escape']
+
   steering_conf = (conf['steering']['center'], conf['steering']['left'], conf['steering']['right'])
   throttle_conf = (conf['throttle']['neutral'], conf['throttle']['reverse'], conf['throttle']['forward'])
   device = conf['device']
