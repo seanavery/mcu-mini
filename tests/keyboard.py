@@ -24,6 +24,12 @@ if __name__ == "__main__":
   throttle_conf = (conf['throttle']['neutral'], conf['throttle']['reverse'], conf['throttle']['forward'])
   device = conf['device']
 
+  # print controls
+  print("w: throttle up")
+  print("s: throttle down")
+  print("d: steering right")
+  print("a: steering left")
+
   msg = Message(steering_conf, throttle_conf)
 
   # connect to arduino through serial port
@@ -31,8 +37,7 @@ if __name__ == "__main__":
     ser = serial.Serial("/dev/{}".format(device), 115200);
     print("connected to serial port")
   except Exception as e:
-    print("failed to connect to serial port", device)
-    print(e)
+    print("failed to connect to serial port", device, e)
     exit(1)
 
   # connect to keyboard
