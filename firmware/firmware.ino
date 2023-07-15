@@ -109,11 +109,11 @@ void loop() {
   else
   {
     // throttle down when serial not connected
-//    waiting  = waiting+1;
-//    if (waiting >= 1000) {
-//      throttle = normalize(throttle);
-//      waiting = 0;
-//    }
+    waiting  = waiting+1;
+    if (waiting >= 1000) {
+      throttle = normalize(throttle);
+      waiting = 0;
+    }
   }
   motorEsc.write(throttle);
   steeringServo.write(angle);
