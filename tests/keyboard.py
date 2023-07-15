@@ -9,8 +9,8 @@ from util import fetch_config
 
 if __name__ == "__main__":
   # globals
-  throttle = 90;
-  steering = 90;
+  throttle = 90
+  steering = 90
 
   # fetch config
   conf = fetch_config()
@@ -19,6 +19,7 @@ if __name__ == "__main__":
   throttle_index = conf['throttle']['prefix']
   steering_index = conf['steering']['prefix']
   escape_char = conf['escape']
+  baudrate = conf['baudrate']
 
   steering_conf = (conf['steering']['center'], conf['steering']['left'], conf['steering']['right'])
   throttle_conf = (conf['throttle']['neutral'], conf['throttle']['reverse'], conf['throttle']['forward'])
@@ -34,7 +35,7 @@ if __name__ == "__main__":
 
   # connect to arduino through serial port
   try:
-    ser = serial.Serial("/dev/{}".format(device), 115200);
+    ser = serial.Serial("/dev/{}".format(device), baudrate)
     print("connected to serial port")
   except Exception as e:
     print("failed to connect to serial port", device, e)
