@@ -5,10 +5,8 @@ import yaml
 # write Messsage class 
 class Message:
   def __init__(self, steering=(90, 60, 120), throttle=(90, 60, 120)):
-    # set steering
-    # set throttle
-    self.steering = steering = steering
-    self.throttle = throttle = throttle
+    self.steering = steering
+    self.throttle = throttle
 
   def normalize_steering(self, val):
     return round(self.steering[0] + val * ((self.steering[2] - self.steering[1])/2))
